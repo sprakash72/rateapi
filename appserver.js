@@ -16,9 +16,6 @@ const app = express();
 
 mongoose.Promise = global.Promise;
 // mongoose.connect("mongodb://localhost/rateapp");
-//connect to database on mlab: account username/password:sumit.prak/Mongo123!
-//DB user name/password: admin:password
-// mongoose.connect('mongodb://admin:password@ds229290.mlab.com:29290/ratingapp');
 //key/value pairs will be provided on heroku
 mongoose.connect('process.env.MONGODB');
 
