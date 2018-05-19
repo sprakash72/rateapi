@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "appserver.js",
+  "engine":{
+    "node":"8.11.1",
+    "npm":"5.8.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node appserver.js"
   },
   "author": "",
   "license": "ISC",
