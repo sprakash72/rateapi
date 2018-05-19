@@ -1,0 +1,1 @@
+web: pm2 start appserver.js && pm2 logs all

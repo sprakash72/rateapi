@@ -8,8 +8,8 @@
     "npm":"5.8.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node appserver.js"
+    "preinstall": "npm install pm2 -g && pm2 install pm2-logrotate",
+    "start":"pm2-runtime appserver.js -i 0"
   },
   "author": "",
   "license": "ISC",
