@@ -17,8 +17,8 @@ const app = express();
 mongoose.Promise = global.Promise;
 // mongoose.connect("mongodb://localhost/rateapp");
 //key/value pairs will be provided on heroku
-mongoose.connect('process.env.MONGODB');
-// mongoose.connect('mongodb://admin:password@ds229290.mlab.com:29290/ratingapp');
+// mongoose.connect('process.env.MONGODB');
+mongoose.connect('mongodb://admin:password@ds229290.mlab.com:29290/ratingapp');
 
 app.use(helmet());
 app.use(compression());
