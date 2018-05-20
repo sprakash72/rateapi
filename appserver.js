@@ -17,8 +17,8 @@ const app = express();
 mongoose.Promise = global.Promise;
 // mongoose.connect("mongodb://localhost/rateapp");
 //key/value pairs will be provided on heroku
-// mongoose.connect('process.env.MONGODB');
-mongoose.connect('mongodb://admin:password@ds229290.mlab.com:29290/ratingapp');
+mongoose.connect(process.env.MONGODB);
+// mongoose.connect('mongodb://admin:password@ds229290.mlab.com:29290/ratingapp');
 
 app.use(helmet());
 app.use(compression());
@@ -39,7 +39,7 @@ app.use(bodyParser.json());
 
 app.use(session({
     // secret: 'secretkey',
-    secret: 'process.env.SECRET',
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
     store: new MongoStore({mongooseConnection: mongoose.connection})
@@ -53,6 +53,6 @@ const company = require('./routes/companyRoute');
 app.use('/api', user); //all 'user' routes will have '/api' prepended in URL 
 app.use('/api', company);
 
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
     console.log('Server running on port 3000');
 });
